@@ -1,6 +1,40 @@
 const gulp = require("gulp");
 const gap = require("gulp-append-prepend");
 
+gulp.task("default", async function () {
+  gulp
+    .src("build/static/js/*chunk.js", { base: "./" })
+    .pipe(
+      gap.prependText(`/*!
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/`)
+    )
+    .pipe(gulp.dest("./", { overwrite: true }));
+
+  gulp
+    .src("build/index.html", { base: "./" })
+    .pipe(
+      gap.prependText(`<!--
+
+
+-->`)
+    )
+    .pipe(gulp.dest("./", { overwrite: true }));
+
+  gulp
+    .src("build/static/css/*chunk.css", { base: "./" })
+    .pipe(
+      gap.prependText(`/*!
+
+
+
+*/`)
+    )
+    .pipe(gulp.dest("./", { overwrite: true }));
+  return;
+});
 gulp.task("licenses", async function () {
   gulp
     .src("build/static/js/*chunk.js", { base: "./" })
@@ -35,3 +69,5 @@ gulp.task("licenses", async function () {
     .pipe(gulp.dest("./", { overwrite: true }));
   return;
 });
+
+
