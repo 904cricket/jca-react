@@ -24,12 +24,18 @@
       rel="stylesheet"
     />
     <title>Jacksonville Cricket Assocaition Home Page</title>
-    <script type="text/jsx" src="./lander.js"></script>
+    <script type="text/babel" src="./index.js"></script>
 
   </head>
   <body>
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="root"></div>
+    <script type="text/jsx">
+      React.render(
+          <AdminLayout />,
+          document.getElementById('root')
+      );
+  </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
