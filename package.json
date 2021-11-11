@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/904cricket/jca-react.git"
   },
-  "homepage": "https://demos.creative-tim.com/argon-dashboard-react/",
+  "homepage": "https://904cricket.com/jca-dashboard-react/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
